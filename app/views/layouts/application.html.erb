@@ -6,9 +6,26 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+     <!-- Font -->
+    <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic' rel='stylesheet' type='text/css'>
+    <!-- Bootstrap Styles -->
+    <link href="/assets/css/bootstrap.elemento.min.css" rel="stylesheet" id="elemento-theme">
   </head>
 
   <body>
+    <%= render 'layouts/navbar' %>
+    <% flash.each do |name, message| %>
+      <div class="alert alert-<%= name %> alert-dismissable" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4><%= message %></h4>
+      </div>
+    <% end %>
     <%= yield %>
+
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="/assets/js/jquery.js"></script>
+    <script src="/assets/js/bootstrap.min.js"></script>
+    <script src="/assets/js/application.js"></script>
   </body>
 </html>

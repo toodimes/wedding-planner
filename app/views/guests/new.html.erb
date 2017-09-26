@@ -1,0 +1,79 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <h2>This is the Add a guest page</h2>
+      <!-- <h3>It will have a form to add a guest, guest information is:</h3>
+      <ul>
+        <li>Title</li>
+        <li>First Name</li>
+        <li>Last Name</li>
+        <li>Address Line 1</li>
+        <li>Address Line 2</li>
+        <li>City</li>
+        <li>State</li>
+        <li>Zip</li>
+        <li>Email Address</li>
+        <li>Invited</li>
+        <li>Replied</li>
+        <li>Attending</li>
+        <li>Number of Guests Attending</li>
+        <li>Thank You Sent</li>
+        <li>Notes</li>
+      </ul> -->
+      <%= form_tag "/guests", method: :post, class: "form-horizontal" do %>
+        <input type="text" class="form-control" placeholder="Title" name="title">
+        <br>
+        <input type="text" class="form-control" placeholder="First Name" name="first_name">
+        <br>
+        <input type="text" class="form-control" placeholder="Last Name" name="last_name">
+        <br>
+        <div class="row">
+          <div class="col-sm-6">
+            <input type="text" class="form-control" placeholder="Address Line 1" name="address_line_1">
+          </div>
+          <div class="col-sm-6">
+            <input type="text" class="form-control" placeholder="Address Line 2" name="address_line_2">
+          </div>
+        </div>
+        <br>
+        <div class="row">
+          <div class="col-sm-4">
+            <input type="text" class="form-control" placeholder="City" name="address_city">
+          </div>
+          <div class="col-sm-4">
+            <input type="text" class="form-control" placeholder="State" name="address_state" data-mask="aa">
+          </div>
+          <div class="col-sm-4">
+            <input type="text" class="form-control" placeholder="Zip" name="address_zip" data-mask="99999">
+          </div>
+        </div>
+        <br>
+        <div class="row">
+          <p class="lead text-muted">Details</p>
+          <div class="col-sm-4">
+            <label for="invited">
+              <input type="checkbox" value="invited" class="form-control">
+              Do you want this guest to be counted in your total?
+            </label>
+          </div>
+          <div class="col-sm-4">
+            <label for="attending">
+              <input type="checkbox" value="attending" class="form-control">
+              Do you think they will attend?
+            </label>
+          </div>
+          <div class="col-sm-4">
+            <label>
+              <input type="text" class="form-control" name="number_of_attendees">
+              Total Number Attending
+            </label>
+          </div>
+        </div>
+        <br>
+        <input type="text" class="form-control" name="notes" placeholder="Any Notes?">
+        <br>
+        <input type="submit" value="Add Guest!" class="pull-right">
+      <% end %>
+    </div>
+  </div>
+</div>
